@@ -31,7 +31,7 @@ public class DynamicObstacleMovement : MonoBehaviour
             {
                 Invoke("ReloadScene", .5f);
             }
-            if (collision.gameObject.CompareTag("Character"))
+            if (collision.gameObject.CompareTag("Enemy"))
             {
                 float characterDeadPos = collision.gameObject.transform.position.z;
                 characterDeadPos = characterStartPosZ;

@@ -38,16 +38,16 @@ public class EnemyNav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        blocked = NavMesh.Raycast(transform.position, transform.position+2*Vector3.forward, out hit, NavMesh.AllAreas);
-        blockedCrossLeft = NavMesh.Raycast(transform.position, transform.position+Vector3.forward+Vector3.left, out hit, NavMesh.AllAreas);
-        blockedCrossRight = NavMesh.Raycast(transform.position, transform.position+Vector3.forward+Vector3.right, out hit, NavMesh.AllAreas);
-        blockedLeft = NavMesh.Raycast(transform.position, transform.position+Vector3.left, out hit, NavMesh.AllAreas);
-        blockedRight = NavMesh.Raycast(transform.position, transform.position+Vector3.right, out hit, NavMesh.AllAreas);
-        Debug.DrawLine(transform.position, transform.position+Vector3.forward*2+Vector3.left, blockedCrossLeft ? Color.red : Color.green);
-        Debug.DrawLine(transform.position, transform.position+Vector3.forward*2+Vector3.right, blockedCrossRight ? Color.red : Color.green);
-        Debug.DrawLine(transform.position, transform.position+2*Vector3.forward, blocked ? Color.red : Color.green);
-        Debug.DrawLine(transform.position, transform.position+Vector3.left, blockedLeft ? Color.red : Color.green);
-        Debug.DrawLine(transform.position, transform.position+Vector3.right, blockedRight ? Color.red : Color.green);
+        blocked = NavMesh.Raycast(transform.position, transform.position + 2 * Vector3.forward, out hit, NavMesh.AllAreas);
+        blockedCrossLeft = NavMesh.Raycast(transform.position, transform.position + Vector3.forward + Vector3.left, out hit, NavMesh.AllAreas);
+        blockedCrossRight = NavMesh.Raycast(transform.position, transform.position + Vector3.forward + Vector3.right, out hit, NavMesh.AllAreas);
+        blockedLeft = NavMesh.Raycast(transform.position, transform.position + Vector3.left, out hit, NavMesh.AllAreas);
+        blockedRight = NavMesh.Raycast(transform.position, transform.position + Vector3.right, out hit, NavMesh.AllAreas);
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * 2 + Vector3.left, blockedCrossLeft ? Color.red : Color.green);
+        Debug.DrawLine(transform.position, transform.position + Vector3.forward * 2 + Vector3.right, blockedCrossRight ? Color.red : Color.green);
+        Debug.DrawLine(transform.position, transform.position + 2 * Vector3.forward, blocked ? Color.red : Color.green);
+        Debug.DrawLine(transform.position, transform.position + Vector3.left, blockedLeft ? Color.red : Color.green);
+        Debug.DrawLine(transform.position, transform.position + Vector3.right, blockedRight ? Color.red : Color.green);
     }   
 
     private void FixedUpdate()
@@ -81,7 +81,7 @@ public class EnemyNav : MonoBehaviour
             {
                 agentVelocity.x = 0;
             }
-            rb.velocity = agentVelocity* Time.deltaTime;
+            rb.velocity = agentVelocity * Time.deltaTime;
         }
         else
         {

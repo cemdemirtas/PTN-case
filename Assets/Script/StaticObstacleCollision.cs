@@ -19,7 +19,8 @@ public class StaticObstacleCollision : MonoBehaviour
             //collision.transform.GetComponent<Movement>().enabled = false;
 
             collision.transform.gameObject.GetComponent<Animator>().SetBool("run", false);
-            collision.transform.position = (startPos);
+            startPos.y = -0.0159f;
+            collision.transform.position = startPos;
 
         }
         //if (collision.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rb))

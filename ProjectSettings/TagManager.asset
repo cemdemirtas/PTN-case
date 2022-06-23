@@ -6,14 +6,21 @@ TagManager:
   tags:
   - Enemy
   - FinishLine
+  - Obstacle
+  - Ground
+  - Rotator
+  - Donut
+  - ObstacleRing
+  - Board
+  - ObstacleRingEnd
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Obstacles
   - 
   - 
   - 

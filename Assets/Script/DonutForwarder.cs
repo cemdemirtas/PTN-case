@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class HalfDonutMover : MonoBehaviour
+public class DonutForwarder : MonoBehaviour
 {
     [SerializeField] float thrownPosition = -0.1f;
     [SerializeField] float throwInterval = 0.5f;
@@ -28,25 +28,13 @@ public class HalfDonutMover : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Character") || collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Player"))
         {            
             if (collision.gameObject.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {               
                 rb.AddForce(transform.forward * -1, ForceMode.Impulse);
-
-                if (collision.gameObject.CompareTag("Player"))
-                {
-                    Invoke("ReloadScene", 0.5f);
-                }
-
-                float deadPos = collision.gameObject.transform.position.z;
-                deadPos = characterStartPosZ;
             }          
         }
     }
 
-    private void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

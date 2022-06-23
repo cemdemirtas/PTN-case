@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
 
-public class EnemyNav : MonoBehaviour
+public class OpponentNav : MonoBehaviour
 {
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float horizontalSpeed;
